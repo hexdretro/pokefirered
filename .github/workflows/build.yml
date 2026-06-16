@@ -19,6 +19,11 @@ jobs:
           path: 'agbcc'
           repository: 'pret/agbcc'
 
+      - name: Install build tools dependencies
+        run: |
+          apt-get update
+          apt-get install -y build-essential libpng-dev
+
       - name: Build agbcc
         run: |
           ./build.sh
