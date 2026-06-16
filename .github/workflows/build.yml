@@ -8,34 +8,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GAME_VERSION: FIRERED
-      GAME_LANGUAGE: ENGLISH
-      GAME_REVISION: 0
-      MODERN: 0
-      COMPARE: 1
+    container: devkitpro/devkitarm:latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout project
+        uses: actions/checkout@v4
 
-      - name: Checkout agbcc
-        uses: actions/checkout@v3
+      - name: Checkout agbcc compiler
+        uses: actions/checkout@v4
         with:
           path: 'agbcc'
           repository: 'pret/agbcc'
 
-      - name: Install binutils
-        run: |
-          sudo apt update
-          sudo apt install -y gcc-arm-none-eabi binutils-arm-none-eabi libpng-dev
-
-      - name: Install agbcc
+      - name: Build agbcc
         run: |
           ./build.sh
           ./install.sh ../
         working-directory: ./agbcc
 
-      - name: Build FireRed
+      - name: Build ROM
         run: |
           make -j$(nproc) all
 
