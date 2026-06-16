@@ -29,6 +29,10 @@ jobs:
           ./install.sh ../
         working-directory: ./agbcc
 
+      - name: Build internal repo tools
+        run: |
+          make -C tools/
+
       - name: Build ROM
         run: |
           make -j$(nproc) all
