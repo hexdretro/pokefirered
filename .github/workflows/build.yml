@@ -29,8 +29,12 @@ jobs:
           ./install.sh ../
         working-directory: ./agbcc
 
-      - name: Build internal tools
+      - name: Build internal tools sequentially
         run: |
+          make -C tools/gbagfx
+          make -C tools/scaninc
+          make -C tools/preproc
+          make -C tools/ramscrgen
           make tools
 
       - name: Build ROM
