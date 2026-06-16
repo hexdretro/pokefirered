@@ -1,0 +1,26 @@
+[
+  {
+    "species": "SPECIES_BULBASAUR",
+    "level": 5,
+    "item": "ITEM_NONE",
+    "custom_move": "MOVE_NONE",
+    "shiny_chance": 0.0,
+    "ball_item": null
+  },
+  {
+    "species": "SPECIES_SQUIRTLE",
+    "level": 5,
+    "item": "ITEM_NONE",
+    "custom_move": "MOVE_NONE",
+    "shiny_chance": 0.0,
+    "ball_item": null
+  },
+  {
+    "species": "SPECIES_CHARMANDER",
+    "level": 5,
+    "item": "ITEM_NONE",
+    "custom_move": "MOVE_NONE",
+    "shiny_chance": 0.0,
+    "ball_item": null
+  }
+]
