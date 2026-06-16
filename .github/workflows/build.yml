@@ -29,9 +29,9 @@ jobs:
           ./install.sh ../
         working-directory: ./agbcc
 
-      - name: Build internal repo tools
+      - name: Build internal tools
         run: |
-          make -C tools/
+          make tools
 
       - name: Build ROM
         run: |
