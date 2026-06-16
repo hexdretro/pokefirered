@@ -7,8 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container: devkitpro/devkitarm:latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout project
         uses: actions/checkout@v4
@@ -19,10 +18,10 @@ jobs:
           path: 'agbcc'
           repository: 'pret/agbcc'
 
-      - name: Install build tools dependencies
+      - name: Install system build dependencies
         run: |
-          apt-get update
-          apt-get install -y build-essential libpng-dev
+          sudo apt-get update
+          sudo apt-get install -y build-essential libpng-dev gcc-arm-none-eabi binutils-arm-none-eabi
 
       - name: Build agbcc
         run: |
